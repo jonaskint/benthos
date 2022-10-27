@@ -2,6 +2,8 @@ FROM golang:1.19 AS build
 
 ENV CGO_ENABLED=0
 ENV GOOS=linux
+ENV GOFLAGS="-buildvcs=false"
+
 RUN useradd -u 10001 benthos
 
 WORKDIR /go/src/github.com/benthosdev/benthos/
